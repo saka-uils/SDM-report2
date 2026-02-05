@@ -19,3 +19,19 @@ class TestCalc (unittest.TestCase):
         def test_sample4 (self):
                 self.assertEqual (-1, calc(0.1,999))
 
+        def test_boundary_min(self):
+                self.assertEqual(1, calc(1, 1))
+
+        def test_boundary_max(self):
+                self.assertEqual(998001, calc(999, 999))
+
+        def test_invalid_upper(self):
+                self.assertEqual(-1, calc(1000, 5))
+
+        def test_float_input(self):
+                self.assertEqual(-1, calc(1.5, 2))
+
+        def test_negative_input(self):
+                self.assertEqual(-1, calc(-1, 5))
+
+
